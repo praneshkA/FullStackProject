@@ -1,0 +1,219 @@
+.hero {
+    height: 100vh;
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22);
+    display: flex;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 180px;
+    line-height: 1.1;
+}
+
+.hero-left h2 {
+    color: rgb(249, 231, 231);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-left p {
+    color: rgb(20, 13, 13);
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-hand-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-hand-icon img {
+    width: 105px;
+}
+
+.hero-latest-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-top: 30px;
+    background: rgb(17, 9, 9);
+    color: rgb(212, 200, 200);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-latest-btn:hover {
+    background: rgb(37, 32, 32);
+    transform: scale(1.05);
+}
+
+.hero-latest-btn img {
+    width: 30px;
+    height: 15px;
+}
+
+.hero-latest-btn p {
+    font-size: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+
+/* --------- MEDIA QUERIES --------- */
+
+/* For screens up to 1280px */
+@media (max-width: 1280px) {
+    .hero-left {
+        padding-left: 100px;
+    }
+
+    .hero-left p {
+        font-size: 50px;
+    }
+
+    .hero-latest-btn {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+
+    .hero-latest-btn p {
+        font-size: 25px;
+    }
+
+    .hero-hand-icon img {
+        width: 90px;
+    }
+}
+
+/* For screens up to 1024px */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .hero-left {
+        padding-left: 60px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-left h2 {
+        font-size: 18px;
+    }
+
+    .hero-left p {
+        font-size: 40px;
+    }
+
+    .hero-hand-icon {
+        justify-content: center;
+    }
+
+    .hero-hand-icon img {
+        width: 80px;
+    }
+
+    .hero-latest-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .hero-latest-btn p {
+        font-size: 22px;
+    }
+
+    .hero-right {
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+}
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+    .hero-left {
+        padding-left: 30px;
+        gap: 15px;
+    }
+
+    .hero-left h2 {
+        font-size: 16px;
+    }
+
+    .hero-left p {
+        font-size: 32px;
+    }
+
+    .hero-hand-icon img {
+        width: 70px;
+    }
+
+    .hero-latest-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .hero-latest-btn p {
+        font-size: 18px;
+    }
+}
+
+/* For screens up to 480px */
+@media (max-width: 480px) {
+    .hero-left {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero-left h2 {
+        font-size: 14px;
+    }
+
+    .hero-left p {
+        font-size: 26px;
+    }
+
+    .hero-hand-icon {
+        gap: 10px;
+    }
+
+    .hero-hand-icon img {
+        width: 60px;
+    }
+
+    .hero-latest-btn {
+        padding: 6px 12px;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .hero-latest-btn p {
+        font-size: 16px;
+    }
+
+    .hero-latest-btn img {
+        width: 20px;
+        height: 10px;
+    }
+}

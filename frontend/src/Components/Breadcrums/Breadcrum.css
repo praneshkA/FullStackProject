@@ -1,0 +1,64 @@
+.breadcrum {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures it wraps on smaller screens */
+    gap: 8px; /* Space between items */
+    font-size: 18px;
+    color: #5b5b5b;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px 170px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .breadcrum img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+  }
+  
+  /* ---------------------------------------- */
+  /* MEDIA QUERIES */
+  /* ---------------------------------------- */
+  
+  /* Laptops (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .breadcrum {
+      padding: 20px 80px;
+      font-size: 16px;
+    }
+  
+    .breadcrum img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .breadcrum {
+      padding: 15px 40px;
+      font-size: 15px;
+      gap: 6px;
+    }
+  
+    .breadcrum img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  /* Mobile devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .breadcrum {
+      padding: 10px 20px;
+      font-size: 14px;
+      gap: 5px;
+    }
+  
+    .breadcrum img {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  

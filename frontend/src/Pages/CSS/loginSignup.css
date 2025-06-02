@@ -1,0 +1,205 @@
+/* Glassmorphism container */
+.login-glass-container {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Glassmorphism form */
+.login-glass-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  width: 350px;
+  text-align: center;
+}
+
+/* Avatar icon */
+.login-avatar {
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Headings */
+.login-glass-form h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Input groups */
+.login-input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.login-input-group i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+
+.login-input-group input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.login-input-group input::placeholder {
+  color: #ddd;
+}
+.hover-pointer {
+  cursor: pointer;
+}
+
+/* Checkbox group */
+.login-checkbox-group {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.login-checkbox-group input {
+  margin-right: 10px;
+}
+
+/* Button styles */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+}
+
+/* Switch auth link */
+.login-switch-auth {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #ddd;
+  font-size: 20px;
+  font-family: poppins, sans-serif;
+}
+
+.login-link {
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------ */
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* ------------------------------------ */
+
+/* Large Screens (Desktops - max-width: 1280px) */
+@media (max-width: 1280px) {
+  .login-glass-form {
+    width: 400px; /* Slightly bigger form on large screens */
+  }
+}
+
+/* Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .login-glass-form {
+    width: 350px;
+    padding: 35px 25px;
+  }
+
+  .login-avatar {
+    font-size: 50px;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .login-glass-container {
+    padding: 20px;
+  }
+
+  .login-glass-form {
+    width: 300px;
+    padding: 30px 20px;
+  }
+
+  .login-avatar {
+    font-size: 45px;
+  }
+
+  .login-input-group input {
+    height: 38px;
+    font-size: 0.85rem;
+    padding-left: 38px;
+  }
+
+  .login-button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .login-glass-form {
+    width: 100%;
+    max-width: 90%;
+    padding: 25px 15px;
+  }
+
+  .login-avatar {
+    font-size: 40px;
+  }
+
+  .login-input-group input {
+    font-size: 0.8rem;
+    padding: 10px 10px 10px 35px;
+  }
+
+  .login-button {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .login-switch-auth {
+    font-size: 0.75rem;
+  }
+
+  .login-checkbox-group {
+    font-size: 0.75rem;
+  }
+}

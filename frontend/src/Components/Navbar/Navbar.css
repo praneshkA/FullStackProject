@@ -1,0 +1,213 @@
+.navbar {
+    width: 100%;
+    padding: 1rem 0.5rem; /* Reduced horizontal padding */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(254, 252, 252, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.25rem; 
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 5px; /* Adjust width as needed */
+    height: 30px; 
+    margin-right: 330px;
+}
+
+.nav-logo p {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: #626262;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.nav-menu hr {
+    border: none;
+    width: 80px;
+    height: 3px;
+    border-radius: 10px;
+    background: #204cc5;
+}
+
+/* Navbar.css */
+
+.nav-login-cart {
+    display: flex;
+    align-items:right;
+    gap: 10px;
+    width: 5px; /* Adjust width as needed */
+    height: 50px; 
+   margin-right: 250px;
+    /* Adjust based on layout requirements */
+}
+
+
+
+.nav-login-cart button {
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    border-radius: 75px; 
+    color: #171414;
+    font-size: 20px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    gap: 20px;
+    margin-left: -51px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-login-cart button:active {
+    background: #ebe5e5;
+}
+
+.nav-cart-count {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    font-size: 15px;
+    background-color: rgb(44, 42, 42);
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -17px;
+    margin-bottom: -10px;
+        cursor: pointer;
+
+}
+
+.my-orders {
+    color: #626262;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 1280px) {
+    .navbar {
+        padding: 12px 50px;
+    }
+    .nav-logo img {
+        width: 40px;
+    }
+    .nav-logo p {
+        font-size: 25px;
+    }
+    .nav-menu {
+        gap: 30px;
+        font-size: 16px;
+    }
+    .nav-login-cart {
+        gap: 30px;
+    }
+    .nav-login-cart button {
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .nav-cart-count {
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 12px 30px;
+    }
+    .nav-menu {
+        gap: 25px;
+        font-size: 14px;
+    }
+    .nav-login-cart button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .nav-login-cart img {
+        width: 30px;
+    }
+    .nav-cart-count {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 10px 0;
+    }
+    .nav-dropdown-icon {
+        display: block;
+        width: 30px;
+        transform: rotate(-90deg);
+        transition: transform 0.5s;
+    }
+    .nav-menu {
+        display: none;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: #ebe5e5;
+        justify-content: center;
+        top: 50px;
+    }
+    .nav-menu-visible {
+        display: flex;
+    }
+    .nav-dropdown.open{
+        transform:rotate(90deg);
+    }
+}
+@media(max-width:500px){
+    .navbar{
+        width:8px 0px;
+        gap:0;
+    }
+    .nav-logo{
+        transform:scale(0.8);
+    }
+    .nav-menu{
+        height: 70px;
+        top:50px;
+    }
+    .nav-login-cart{
+        transform: scale(0.8);
+    }
+}

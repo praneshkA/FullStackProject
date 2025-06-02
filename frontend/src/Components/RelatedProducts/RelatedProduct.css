@@ -1,0 +1,47 @@
+.relatedproducts {
+    width: 100%;
+    padding: 40px 80px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center; /* Centers everything inside */
+  }
+  
+  .relatedproducts h1 {
+    font-size: 28px;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .relatedproducts hr {
+    border: none;
+    height: 3px;
+    width: 120px;
+    background-color: #e53935;
+    margin: 0 auto 40px auto; /* Centers the HR */
+    border-radius: 8px;
+  }
+  
+  /* Item grid container */
+  .relatedproducts-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: left; /* Reset text alignment for the items */
+    margin-top: 20px;
+  }
+  
+  /* Optional item-card style */
+  .relatedproducts-item .item-card {
+    background-color: #fafafa;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .relatedproducts-item .item-card:hover {
+    transform: translateY(-5px);
+  }
+  

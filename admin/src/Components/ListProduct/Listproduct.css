@@ -1,0 +1,65 @@
+/* listProduct.css */
+
+.listProduct {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background for the page */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Darker color for the heading */
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow products to wrap to the next line */
+  justify-content: center; /* Center the product cards */
+  gap: 20px; /* Space between product cards */
+}
+
+.product-card {
+  background: white; /* White background for product cards */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 15px; /* Padding inside the card */
+  width: 200px; /* Fixed width for product cards */
+  text-align: center; /* Center text inside the card */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+.product-image {
+  width: 100%; /* Full width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+h2 {
+  font-size: 18px; /* Font size for product name */
+  margin: 10px 0; /* Margin above and below the product name */
+  color: #333; /* Dark color for product name */
+}
+
+p {
+  margin: 5px 0; /* Margin for paragraphs */
+  color: #666; /* Lighter color for text */
+}
+
+button {
+  background-color: #dc3545; /* Red background for remove button */
+  color: white; /* White text color */
+  border: none; /* No border */
+  padding: 10px; /* Padding inside the button */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  margin-top: 10px; /* Margin above the button */
+}
+
+button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}

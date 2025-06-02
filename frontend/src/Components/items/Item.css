@@ -1,0 +1,150 @@
+.item {
+  width: 280px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333333;
+  margin: 8px 0;
+}
+
+.item-prices {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.item-price-new {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff4d4f;
+}
+
+.item-price-old {
+  font-size: 1rem;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Screens up to 1280px (Tablets and small desktops) */
+@media (max-width: 1280px) {
+  .item {
+    width: 240px;
+    padding: 14px;
+  }
+
+  .item p {
+    font-size: 1rem;
+  }
+
+  .item-price-new {
+    font-size: 1.1rem;
+  }
+
+  .item-price-old {
+    font-size: 0.9rem;
+  }
+}
+
+/* Screens up to 1024px (Tablets and medium devices) */
+@media (max-width: 1024px) {
+  .item {
+    width: 200px;
+    padding: 12px;
+  }
+
+  .item p {
+    font-size: 0.95rem;
+  }
+
+  .item-price-new {
+    font-size: 1rem;
+  }
+
+  .item-price-old {
+    font-size: 0.85rem;
+  }
+}
+
+/* Screens up to 768px (Mobile landscape and small tablets) */
+@media (max-width: 768px) {
+  .item {
+    width: 160px;
+    padding: 10px;
+  }
+
+  .item p {
+    font-size: 0.9rem;
+  }
+
+  .item-price-new {
+    font-size: 0.95rem;
+  }
+
+  .item-price-old {
+    font-size: 0.8rem;
+  }
+
+  .item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Screens up to 480px (Mobile portrait) */
+@media (max-width: 480px) {
+  .item {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .item img {
+    margin-bottom: 8px;
+  }
+
+  .item p {
+    font-size: 0.85rem;
+  }
+
+  .item-price-new {
+    font-size: 0.9rem;
+  }
+
+  .item-price-old {
+    font-size: 0.75rem;
+  }
+
+  .item-prices {
+    gap: 6px;
+  }
+
+  .item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+}

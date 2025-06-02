@@ -1,0 +1,164 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 100px;
+}
+
+.popular h1 {
+    color: #171717;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popular hr {
+    width: 150px;
+    height: 7px;
+    border-radius: 70px;
+    background: #252525;
+}
+
+/* ----------------- USING CSS GRID ----------------- */
+
+.popular-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px; /* Optional: keeps grid from stretching too wide */
+    justify-items: center; /* Optional: centers each card */
+}
+
+.popular-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Makes the card responsive inside the grid */
+    max-width: 250px; /* Controls the max size of each card */
+}
+
+.popular-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popular-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ------------------- MEDIA QUERIES ------------------- */
+
+/* Large screens (max-width: 1280px) */
+@media (max-width: 1280px) {
+    .popular {
+        padding: 80px;
+    }
+
+    .popular h1 {
+        font-size: 30px;
+    }
+
+    .popular hr {
+        width: 120px;
+    }
+
+    .popular-item {
+        gap: 25px;
+    }
+
+    .popular-card {
+        max-width: 230px;
+    }
+
+    .popular-image {
+        height: 180px;
+    }
+}
+
+/* Medium screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .popular {
+        padding: 60px 40px;
+    }
+
+    .popular h1 {
+        font-size: 28px;
+    }
+
+    .popular-item {
+        gap: 20px;
+    }
+
+    .popular-card {
+        max-width: 200px;
+    }
+
+    .popular-image {
+        height: 160px;
+    }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .popular {
+        padding: 50px 20px;
+    }
+
+    .popular h1 {
+        font-size: 26px;
+    }
+
+    .popular hr {
+        width: 100px;
+    }
+
+    .popular-item {
+        gap: 15px;
+    }
+
+    .popular-card {
+        max-width: 180px;
+    }
+
+    .popular-image {
+        height: 140px;
+    }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .popular {
+        padding: 40px 10px;
+    }
+
+    .popular h1 {
+        font-size: 22px;
+    }
+
+    .popular hr {
+        width: 80px;
+    }
+
+    .popular-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .popular-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .popular-image {
+        height: 180px;
+    }
+}
