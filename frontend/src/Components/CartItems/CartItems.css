@@ -85,7 +85,7 @@
     width: 100%;
     padding: 12px;
     margin-top: 20px;
-    background-color: #000000;
+    background-color: #000000ee;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -95,7 +95,7 @@
   }
   
   .checkout-button:hover {
-    background-color: #0c0909;
+    background-color: #0ba700;
   }
   
   .cartitems-promocode-section {
@@ -135,7 +135,7 @@
   }
   
   .submit-promo-button:hover {
-    background-color: #0062cc;
+    background-color: #0ba700;
   }
   
   /* Responsive for mobile */
