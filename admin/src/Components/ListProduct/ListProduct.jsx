@@ -35,7 +35,6 @@ const ListProduct = () => {
       if (result.sucess || result.success) { // check for typo 'sucess' in your backend response to be safe
         // Remove the product from state
         setProducts(products.filter(product => product.id !== id));
-        alert(`Product ${result.name} removed successfully!`);
       } else {
         alert('Failed to remove product.');
       }

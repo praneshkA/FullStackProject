@@ -51,7 +51,6 @@ const AddProduct = () => {
     const result = await response.json();
 
     if (result.success) {
-      alert('Product added successfully!');
       setProductData({
         title: '',
         price: '',

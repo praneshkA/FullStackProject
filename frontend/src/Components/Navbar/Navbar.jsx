@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import cart from "../Assets/cart_icon.png";
 import { ShopContext } from '../../Context/ShopContext';
 import { useRef } from 'react';
-import logo from "../Assets/logo.png";
+import logo_big from "../Assets/logo_big.png";
 
 const Navbar = () => {
   
@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="nav-logo">
-        <img src={logo} alt="" />
+        <img src={logo_big} alt="" />
         <p>ECOWEAR</p>
       </div>
       <ul ref={menuRef} className="nav-menu">
