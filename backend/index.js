@@ -244,13 +244,13 @@ app.get('/api/my-orders', verifyToken, async (req, res) => {
 //   res.redirect(`/api/products/${category}`);
 // });
 
-// Serve frontend in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
-  app.get("*", (req, res) => res.sendFile(path.join(__dirname, "../frontend/build", "index.html")));
-} else {
-  app.get("/", (req, res) => res.send("Express API server running"));
-}
+// // Serve frontend in production
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../frontend/build")));
+//   app.get("*", (req, res) => res.sendFile(path.join(__dirname, "../frontend/build", "index.html")));
+// } else {
+//   app.get("/", (req, res) => res.send("Express API server running"));
+// }
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
