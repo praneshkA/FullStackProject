@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -8,16 +9,18 @@ const fs = require("fs");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 const secretKey = "your_secret_key";
 
 app.use(express.json());
 app.use(cors());
 
+// MongoDB connection
 mongoose.connect("mongodb+srv://pranesh:12345@cluster0.3b7tk9u.mongodb.net/e-commerce?retryWrites=true&w=majority")
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
+// File upload setup
 const uploadDir = path.join(__dirname, "upload/images");
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
@@ -30,7 +33,7 @@ const Storage = multer.diskStorage({
 const upload = multer({ storage: Storage });
 app.use("/images", express.static(uploadDir));
 
-// ---------- MODELS ----------
+// Mongoose Schemas
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
@@ -75,14 +78,14 @@ const User = mongoose.model("User", userSchema);
 const Product = mongoose.model("Product", productSchema);
 const Order = mongoose.model("Order", OrderSchema);
 
-// ---------- ROUTES ----------
+// ROUTES
 app.get("/api", (req, res) => res.send("Express API is running"));
 
 app.get("/api/allproducts", async (req, res) => {
   try {
     const products = await Product.find({});
     res.json(products);
-  } catch (error) {
+  } catch {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
@@ -106,7 +109,7 @@ app.get("/api/product/:id", async (req, res) => {
   }
 });
 
-// AUTH ROUTES
+// Auth routes
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) return res.status(400).json({ success: false, message: "Email and password are required" });
@@ -136,13 +139,14 @@ app.post("/api/signup", async (req, res) => {
   res.json({ success: true, token });
 });
 
-// UPLOAD PRODUCT IMAGE
+// Product image upload
 app.post("/upload", upload.single("product"), (req, res) => {
   if (!req.file) return res.status(400).json({ success: false, message: "No file uploaded" });
   const fileUrl = `${req.protocol}://${req.get("host")}/images/${req.file.filename}`;
   res.json({ success: true, image_url: fileUrl });
 });
 
+// Add product
 app.post("/api/addproduct", upload.single("image"), async (req, res) => {
   const { name, category, new_price, old_price } = req.body;
   if (!name || !category || !new_price || !old_price || !req.file)
@@ -163,6 +167,7 @@ app.post("/api/addproduct", upload.single("image"), async (req, res) => {
   res.status(201).json({ success: true, product: newProduct });
 });
 
+// Remove product
 app.post("/removeproduct", async (req, res) => {
   const { id } = req.body;
   const deleted = await Product.findOneAndDelete({ id });
@@ -170,7 +175,7 @@ app.post("/removeproduct", async (req, res) => {
   res.json({ success: true, message: "Product removed" });
 });
 
-// ---------- CART ROUTES ----------
+// Token verification middleware
 const verifyToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(" ")[1];
   if (!token) return res.status(401).json({ success: false, message: "No token provided" });
@@ -181,6 +186,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
+// Cart routes
 app.get('/api/cart', verifyToken, async (req, res) => {
   const user = await User.findById(req.userId).populate('cart.productId');
   if (!user) return res.status(404).json({ success: false, message: "User not found" });
@@ -214,7 +220,7 @@ app.post('/api/cart/remove', verifyToken, async (req, res) => {
   res.json({ success: true, message: "Item removed from cart" });
 });
 
-// ---------- ORDER ROUTES ----------
+// Order routes
 app.post('/api/order', verifyToken, async (req, res) => {
   const { name, number, products, address, totalAmount, paymentMode } = req.body;
   if (!name || !number || !products || !address || !totalAmount || !paymentMode)
@@ -230,10 +236,14 @@ app.get('/api/my-orders', verifyToken, async (req, res) => {
   res.json({ orders });
 });
 
-// ---------- DEFAULT ROUTES ----------
+// Default routes
 app.get("/allproducts", (req, res) => res.redirect("/api/allproducts"));
-app.get("/products/:category", (req, res) => res.redirect(`/api/products/${req.params.category}`));
+app.get("/products/:category", (req, res) => {
+  const category = req.params.category;
+  res.redirect(`/api/products/${encodeURIComponent(category)}`);
+});
 
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("*", (req, res) => res.sendFile(path.join(__dirname, "../frontend/build", "index.html")));
