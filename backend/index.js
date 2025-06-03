@@ -236,13 +236,13 @@ app.get('/api/my-orders', verifyToken, async (req, res) => {
   res.json({ orders });
 });
 
-// // ---------- DEFAULT ROUTES ----------
-// app.get("/allproducts", (req, res) => res.redirect("/api/allproducts"));
+// ---------- DEFAULT ROUTES ----------
+app.get("/allproducts", (req, res) => res.redirect("/api/allproducts"));
 
-// app.get("/products/:category", (req, res) => {
-//   const category = req.params.category;
-//   res.redirect(`/api/products/${category}`);
-// });
+app.get("/products/:category", (req, res) => {
+  const category = req.params.category;
+  res.redirect(`/api/products/${category}`);
+});
 
 // // Serve frontend in production
 // if (process.env.NODE_ENV === "production") {
