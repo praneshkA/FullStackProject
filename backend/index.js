@@ -236,11 +236,12 @@ app.get('/api/my-orders', verifyToken, async (req, res) => {
   res.json({ orders });
 });
 
-// Default routes
+// ---------- DEFAULT ROUTES ----------
 app.get("/allproducts", (req, res) => res.redirect("/api/allproducts"));
+
 app.get("/products/:category", (req, res) => {
   const category = req.params.category;
-  res.redirect(`/api/products/${encodeURIComponent(category)}`);
+  res.redirect(`/api/products/${category}`);
 });
 
 // Serve frontend in production
