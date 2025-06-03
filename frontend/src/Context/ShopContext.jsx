@@ -12,7 +12,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/allproducts")
+    fetch("https://fullstackproject-480y.onrender.com/api/allproducts")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -33,7 +33,7 @@ const ShopContextProvider = (props) => {
   if (!token) return;
 
   try {
-    const response = await axios.get("http://localhost:4000/api/cart", {
+    const response = await axios.get("https://fullstackproject-480y.onrender.com/api/cart", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -86,7 +86,7 @@ useEffect(() => {
     }
 
     const response = await axios.post(
-      "http://localhost:4000/api/cart/add",
+      "https://fullstackproject-480y.onrender.com/api/cart/add",
       {
         productId: productMongoId,
         quantity: 1,
@@ -123,7 +123,7 @@ const removeFromCart = async (productMongoId) => {
     }
 
     const response = await axios.post(
-      "http://localhost:4000/api/cart/remove",
+      "https://fullstackproject-480y.onrender.com/api/cart/remove",
       {
         productId: productMongoId,
         quantity: 1,

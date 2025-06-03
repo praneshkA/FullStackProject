@@ -43,7 +43,7 @@ const AddProduct = () => {
   formData.append('old_price', parseFloat(productData.offerPrice));
 
   try {
-    const response = await fetch('http://localhost:4000/api/addproduct', {
+    const response = await fetch('https://fullstackproject-480y.onrender.com/api/addproduct', {
       method: 'POST',
       body: formData,
     });

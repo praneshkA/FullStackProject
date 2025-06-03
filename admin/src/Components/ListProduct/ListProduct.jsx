@@ -7,7 +7,7 @@ const ListProduct = () => {
   // Fetch all products from the API
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:4000/allproducts');
+      const response = await fetch('https://fullstackproject-480y.onrender.com/allproducts');
       const data = await response.json();
       // Since data is already an array, set directly
       if (Array.isArray(data)) {
@@ -23,7 +23,7 @@ const ListProduct = () => {
   // Remove a product
   const removeProduct = async (id) => {
     try {
-      const response = await fetch('http://localhost:4000/removeproduct', {
+      const response = await fetch('https://fullstackproject-480y.onrender.com/removeproduct', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

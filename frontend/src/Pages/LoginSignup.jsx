@@ -30,7 +30,7 @@ const LoginSignup = () => {
   e.preventDefault();
 
   const endpoint = isLogin ? '/api/login' : '/api/signup';
-  const url = `http://localhost:4000${endpoint}`;
+  const url = `https://fullstackproject-480y.onrender.com${endpoint}`;
   const payload = isLogin
     ? { email: formData.email, password: formData.password }
     : formData;
